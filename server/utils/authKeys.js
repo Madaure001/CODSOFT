@@ -1,0 +1,4 @@
+
+module.exports = {
+  jwtSecretKey: "eyJhbGciOiJIUzI1NiJ9.JSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTcxNDQzNzM2MSwiaWF0IjoxNzE0NDM3MzYxfQ.eU1twAcaSlsljVyAnnJMxxHuZ_4xjbTLBrCzP3R9YVE",
+};
