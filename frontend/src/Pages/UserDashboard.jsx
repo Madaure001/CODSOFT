@@ -22,7 +22,7 @@ const UserDashboard = () => {
         const formData = new FormData();
         formData.append("resume", file)
         //console.log(file)
-        const res = await axios.post(`http://localhost:8000/upload/resume`, formData, {
+        const res = await axios.post(`https://codsoft-fmke.onrender.com/upload/resume`, formData, {
             headers: { "Content-Type": "multipart/form-data"},
         });
 			//console.log(res.data)
@@ -43,7 +43,7 @@ const UserDashboard = () => {
         //const token = EazyUser().token
 
         const getApplications = async () => {
-            await fetch(`http://localhost:8000/api/jobs/${userId}/applications`,{
+            await fetch(`https://codsoft-fmke.onrender.com/api/jobs/${userId}/applications`,{
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -79,7 +79,7 @@ const UserDashboard = () => {
         if(hasConfirmed) {
             //after confirmation delete post
             try {
-                fetch(`http://localhost:8000/api/jobs/application/${job?._id}/delete`,{
+                fetch(`https://codsoft-fmke.onrender.com/api/jobs/application/${job?._id}/delete`,{
                     method: "DELETE",
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -136,7 +136,7 @@ const UserDashboard = () => {
                                     <Link 
                                         className="text-gray-700 font-semibold px-2 bg-gray-50 rounded-md flex"
                                         target="_blank"
-                                        to={`http://localhost:8000/profileUploads/${resumeFile()?.resumeName}`}
+                                        to={`https://codsoft-fmke.onrender.com/profileUploads/${resumeFile()?.resumeName}`}
                                     >
                                         <AiOutlineFilePdf  className="content-center text-xl"/>
                                         Resume
