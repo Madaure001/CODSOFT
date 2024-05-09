@@ -2,17 +2,19 @@ import axios from "axios";
 import { useState } from "react";
 import { BsEnvelopePaper } from "react-icons/bs";
 import { IoRocketOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 
 const NewsLetter = () => {
     const [file, setFile] = useState();
+    const navigate = useNavigate()
     
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
         formData.append("resume", file)
-        console.log(file)
-        const res = await axios.post(`http://localhost:8000/upload/resume`, formData, {
+        //console.log(file)
+        const res = await axios.post(`https://codsoft-fmke.onrender.com/upload/resume`, formData, {
 				headers: { "Content-Type": "multipart/form-data"},
 			});
 			//console.log(res.data)
@@ -23,6 +25,8 @@ const NewsLetter = () => {
         //console.log(resumeData)
         localStorage.setItem("EazilyHired-userResume", JSON.stringify(resumeData));
         alert("Resume uploaded successfully!")
+        setFile("")
+        navigate("/login")
     }
   return (
     <div className="flex-col">

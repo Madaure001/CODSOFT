@@ -10,7 +10,7 @@ const Loader = () => {
     ) : ""
   }, [isAuth()]);
   return (
-    <div className='flex justify-center items-center py-36'><span className="loading loading-bars loading-xs"></span>
+    <div className='flex justify-center items-center py-36 w-full'><span className="loading loading-bars loading-xs"></span>
         
         <span className="loading loading-spinner loading-lg text-2xl text-blue/70">creating your account... this may take a minute</span></div>
   )

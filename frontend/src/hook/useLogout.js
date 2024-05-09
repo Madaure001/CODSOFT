@@ -9,7 +9,7 @@ const useLogout = () => {
 	const logout = async () => {
 		setSubmitting(true);
 		try {
-			const res = await fetch("http://localhost:8000/auth/logout", {
+			const res = await fetch("https://codsoft-fmke.onrender.com/auth/logout", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 			});
@@ -19,7 +19,7 @@ const useLogout = () => {
 				
 				throw new Error(data.error);
 			}
-			console.log(data)
+			//console.log(data)
 			
 			localStorage.removeItem("EazilyHired-user");
 			localStorage.removeItem("EazilyHired-userImage");

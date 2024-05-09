@@ -333,7 +333,7 @@ const Form = ({type, selectedOption, onSubmit, submitting, setSelectedOption, jo
               type="submit"
               disabled={submitting}
             >
-              {submitting ? type : `${type} ...`}
+              {submitting ?  `${type} ...` : type}
             </button>
           </div>      
         </form>

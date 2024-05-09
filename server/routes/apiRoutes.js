@@ -250,8 +250,8 @@ router.post("/job/:id/apply", jwtAuth, async (req, res) => {
             });
         }
 
-        application.save()
-        console.log(application)            
+        await application.save()
+        //console.log(application)            
 
             var transporter = nodeMailer.createTransport({
             service: 'gmail',
@@ -271,7 +271,7 @@ router.post("/job/:id/apply", jwtAuth, async (req, res) => {
                 EazilyHired Team.
             `
             };
-            console.log(user, job)
+            //console.log(user, job)
 
             transporter.sendMail(mailOptions, function(error, info){
             if (error) {

@@ -23,7 +23,7 @@ var upload = multer({ storage: storageProfile });
 var type = upload.single("profile");
 
 router.post("/resume", upload.single("resume"), (req, res) => {
-  console.log(req.file)
+  //console.log(req.file)
   Resume.create({
       resumeName: req.file.filename ,
       originalName: req.file.originalname

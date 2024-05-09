@@ -11,47 +11,11 @@ const options = [
     {value: "MySQL", label: "MySQL"}
 ]
 
-const AccountType = ({
-    onCheckboxChange, 
-    inputs, 
-    setInputs,
-    filelogo,
-    setFileLogo,
-    fileProfile,
-    setFileProfile,
-    fileResume,
-    setFileResume}) => {
+const AccountType = ({  onCheckboxChange, inputs, setInputs,}) => {
+    
 	const [selectedOption, setSelectedOption] = useState([null]);
     const [uploadPercentage, setUploadPercentage] = useState(0);
     const [uploadTo, setUploadTo] = useState("");
-
-  
-    const handleUpload = () => {
-        console.log(file);
-        const data = new FormData();
-        data.append("file", file);
-        try {
-        fetch(`http://localhost:8000/upload/${uploadTo}`, {
-            method: "POST",    
-            headers: {
-            "Content-Type": "multipart/form-data",
-            },
-            onUploadProgress: (progressEvent) => {
-            setUploadPercentage(
-                parseInt(
-                Math.round((progressEvent.loaded * 100) / progressEvent.total)
-                )
-            );
-            },
-        })
-        .then((response) => {
-            console.log(response.data);
-            handleInput(identifier, response.data.url);
-        })
-        } catch (error) {
-        console.log(error.response);
-        }
-    };
     
 	return (
 		<div className="w-full">

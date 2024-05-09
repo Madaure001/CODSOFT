@@ -45,7 +45,7 @@ async function Signup (req, res) {
             //const token = generateTokenAndSetCookie(user._id, res);
             const token = jwt.sign({ _id: user._id }, authKeys.jwtSecretKey);
             await user.save(); //save the new created user
-            console.log(user)
+            //console.log(user)
             
             //create user profile
             const userAccount = user.type === "recruiter" ?
@@ -78,7 +78,7 @@ async function Signup (req, res) {
             }
         
             await userAccount.save()
-            console.log(userAccount)
+            //console.log(userAccount)
             //return the newly created user
             res.status(201).json({ 
                 _id: user._id,

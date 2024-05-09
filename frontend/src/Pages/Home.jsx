@@ -29,10 +29,10 @@ const Home = () => {
   }
   const getAlljobs = async () => {
     setIsLoading(true);
-    const res = await axios.get(`http://localhost:8000/api/jobs`)
-    console.log(res)
+    const res = await axios.get(`https://codsoft-fmke.onrender.com/api/jobs`)
+    
     setJobs(res.data);
-    console.log(jobs)
+   
     setIsLoading(false);
   }
   //update jobs and selected categories

@@ -16,7 +16,7 @@ const EditJob = () => {
   useEffect(() => {
     
     const getJobDetails = async () => {
-      const response = await fetch(`http://localhost:8000/api/jobs/job/${id}`,{
+      const response = await fetch(`https://codsoft-fmke.onrender.com/api/jobs/job/${id}`,{
         method: "GET",
         headers: {
         Authorization: `Bearer ${token}`,
@@ -25,9 +25,8 @@ const EditJob = () => {
       })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        //console.log(data)
         setJob(data)
-        console.log(job)
         setIsLoading(false)
       })        
     }
@@ -38,10 +37,9 @@ const EditJob = () => {
   const onSubmit = async (data) => {
 
     data.skills = selectedOption;
-    console.log(data)
     setSubmitting(true)
     try {
-      await fetch(`http://localhost:8000/api/jobs/job/${id}`, {
+      await fetch(`https://codsoft-fmke.onrender.com/api/jobs/job/${id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -52,7 +50,6 @@ const EditJob = () => {
       .then((res) => res.json())
       .then((result) => {
 
-        console.log(result);
         if(result.acknowledge === true ) {
           alert("Job Edited successfully!")
           navigate("/recruite/dashboard")
