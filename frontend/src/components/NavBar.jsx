@@ -69,7 +69,7 @@ const NavBar = () => {
                         <div className="text-base text-blue font-medium space-x-3 lg:space-x-5 
                             hidden md:flex"
                             >
-                                <img src={`https://codsoft-fmke.onrender.com/profileUploads/${displayPic()}`} 
+                                <img src={`http://localhost:8000/profileUploads/${displayPic()}`} 
                                     alt="" 
                                     width={40}
                                     height={30}
@@ -107,7 +107,7 @@ const NavBar = () => {
             <div className="md:hidden flex gap-2">
                 { isAuth() &&
                     <img 
-                        src={`https://codsoft-fmke.onrender.com/profileUploads/${displayPic()}`} 
+                        src={`http://localhost:8000/profileUploads/${displayPic()}`} 
                         alt="profile" 
                         width={37}
                         height={37}

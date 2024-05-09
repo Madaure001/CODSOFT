@@ -190,15 +190,15 @@ router.delete("/job/:id/delete", jwtAuth, async (req, res) => {
         message: "You don't have permissions to delete the job",
         });
     }
-    const {id} =  req.params._id;
-    const userId = user._id;
-    const filter = { _id: id}
-    console.log(filter, userId)
+    const id =  req.params.id;
+    const postedBy = user._id;
+    const filter = { _id: id, postedBy: postedBy}
+    console.log(id, postedBy)
     try {
-        const job = Job.findOneAndDelete({filter, userId})
-        if (job ) {
+        const job = await Job.findOneAndDelete(filter)
+        if (!job ) {
             return res.status(401).json({
-            message: "You don't have permissions to delete the job",
+            message: "Could not delete job",
             });
         }
         res.status(200).json({
@@ -344,13 +344,13 @@ router.delete("/application/:id/delete", jwtAuth, async (req, res) => {
     try {
         const application = await Application.findOneAndDelete(filter)
         //console.log(application)
-        if (application ) {
+        if (!application ) {
             return res.status(401).json({
-            message: "could not delete job",
+            message: "Could not delete application",
             });
         }
         res.status(200).json({
-            message: "Job deleted successfully",
+            message: "Application deleted successfully",
         });
     } catch (error) {
         res.status(400).json({

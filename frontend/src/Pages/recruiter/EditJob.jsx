@@ -16,7 +16,7 @@ const EditJob = () => {
   useEffect(() => {
     
     const getJobDetails = async () => {
-      const response = await fetch(`https://codsoft-fmke.onrender.com/api/jobs/job/${id}`,{
+      const response = await fetch(`http://localhost:8000/api/jobs/job/${id}`,{
         method: "GET",
         headers: {
         Authorization: `Bearer ${token}`,
@@ -41,7 +41,7 @@ const EditJob = () => {
     console.log(data)
     setSubmitting(true)
     try {
-      await fetch(`https://codsoft-fmke.onrender.com/api/jobs/job/${id}`, {
+      await fetch(`http://localhost:8000/api/jobs/job/${id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,

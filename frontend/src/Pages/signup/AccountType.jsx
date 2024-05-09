@@ -31,7 +31,7 @@ const AccountType = ({
         const data = new FormData();
         data.append("file", file);
         try {
-        fetch(`https://codsoft-fmke.onrender.com/upload/${uploadTo}`, {
+        fetch(`http://localhost:8000/upload/${uploadTo}`, {
             method: "POST",    
             headers: {
             "Content-Type": "multipart/form-data",

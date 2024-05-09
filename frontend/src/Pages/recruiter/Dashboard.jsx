@@ -19,7 +19,7 @@ const Dashboard = () => {
         ) : navigate("/login")
         //const token = EazyUser().token
 
-        fetch(`https://codsoft-fmke.onrender.com/api/jobs/${id}/dashboard`,{
+        fetch(`http://localhost:8000/api/jobs/${id}/dashboard`,{
             method: "GET",
             headers: {
             Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ const Dashboard = () => {
        setIsLoading(false);
     }
 
-    const handleDelete = (job) => {
+    const handleDelete = async (job) => {
         //console.log(id)
         //verify user's decision to delete
         const hasConfirmed = confirm("Are you sure you want to delete this job?");
@@ -51,7 +51,7 @@ const Dashboard = () => {
         if(hasConfirmed) {
             //after confirmation delete post
             try {
-                fetch(`https://codsoft-fmke.onrender.com/api/jobs/job/${job._id}/delete`,{
+                await fetch(`http://localhost:8000/api/jobs/job/${job._id}/delete`,{
                     method: "DELETE",
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -60,10 +60,11 @@ const Dashboard = () => {
                 })
                 .then((res) => res.json())
                 .then((data) => {
-                    if (data.acknowledge ===true) {
+                    if (data) {
                         alert("Job deleted successfully!")
                     }
-                })                
+                })
+                .then(err => console.log(err))                
             } catch (error) {
                 console.log(error)
                 alert("Job could not be deleted!")
@@ -134,8 +135,11 @@ const Dashboard = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {
-                                        jobs?.map((job, index) => (                                
+                                    <>
+                                        {jobs &&
+                                    
+                                    
+                                        jobs.map((job, index) => (                                
                                             <tr key={index}>
                                                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
                                                 {index + 1}
@@ -159,6 +163,7 @@ const Dashboard = () => {
                                             </tr>
                                         ))
                                     }
+                                    </>
                                 </tbody>                        
                             </table>
                         </div>

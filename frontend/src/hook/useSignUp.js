@@ -21,7 +21,7 @@ const useSignup = () => {
 			//const 
 			navigate("/loader")
 			//create user profile image
-			const res = await axios.post(`https://codsoft-fmke.onrender.com/upload/profile`,inputs, {
+			const res = await axios.post(`http://localhost:8000/upload/profile`,inputs, {
 				headers: { "Content-Type": "multipart/form-data"},
 			});
 			//console.log(res.data)
@@ -35,7 +35,7 @@ const useSignup = () => {
 			localStorage.setItem("EazilyHired-userImage", JSON.stringify(imageData));
 			
 			//save user locally 
-			const response = await fetch(`https://codsoft-fmke.onrender.com/auth/signup/`, {           //handle CORS error
+			const response = await fetch(`http://localhost:8000/auth/signup/`, {           //handle CORS error
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({

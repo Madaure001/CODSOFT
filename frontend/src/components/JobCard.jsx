@@ -28,7 +28,7 @@ const JobCard = ({data}) => {
             <div>
                 <Link to={`/jobs/job/${_id}`} className="flex gap-4 items-start m-1 p-2">
                     <img 
-                        src={`https://codsoft-fmke.onrender.com/profileUploads/${companyLogo}`} 
+                        src={`http://localhost:8000/profileUploads/${companyLogo}`} 
                         alt="company logo" 
                         width={80}
                         height={80}
