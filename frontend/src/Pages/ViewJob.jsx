@@ -14,7 +14,7 @@ const JobInfo = () => {
 
     useEffect(() => {
         const getJobDetails = async () => {
-             await fetch(`http://localhost:8000/api/jobs/job/${id}`,{
+             await fetch(`https://codsoft-fmke.onrender.com/api/jobs/job/${id}`,{
                 method: "GET",
                 headers: {
                 "Content-Type":"application/json"
