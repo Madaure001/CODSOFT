@@ -19,7 +19,7 @@ const Dashboard = () => {
         ) : navigate("/login")
         //const token = EazyUser().token
 
-        fetch(`https://codsoft-fmke.onrender.com/api/jobs/${id}/dashboard`,{
+        fetch(`http://localhost:8000/api/jobs/${id}/dashboard`,{
             method: "GET",
             headers: {
             Authorization: `Bearer ${token}`,
@@ -51,7 +51,7 @@ const Dashboard = () => {
         if(hasConfirmed) {
             //after confirmation delete post
             try {
-                await fetch(`https://codsoft-fmke.onrender.com/api/jobs/job/${job._id}/delete`,{
+                await fetch(`http://localhost:8000/api/jobs/job/${job._id}/delete`,{
                     method: "DELETE",
                     headers: {
                         Authorization: `Bearer ${token}`,

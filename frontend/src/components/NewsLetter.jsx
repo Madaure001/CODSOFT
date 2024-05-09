@@ -14,7 +14,7 @@ const NewsLetter = () => {
         const formData = new FormData();
         formData.append("resume", file)
         //console.log(file)
-        const res = await axios.post(`https://codsoft-fmke.onrender.com/upload/resume`, formData, {
+        const res = await axios.post(`http://localhost:8000/upload/resume`, formData, {
 				headers: { "Content-Type": "multipart/form-data"},
 			});
 			//console.log(res.data)

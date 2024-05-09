@@ -22,7 +22,7 @@ const ApplyJob = () => {
 
     //get job details
   const getJobDetails = async () => {
-      await fetch(`https://codsoft-fmke.onrender.com/api/jobs/job/${id}`,{
+      await fetch(`http://localhost:8000/api/jobs/job/${id}`,{
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -53,7 +53,7 @@ const ApplyJob = () => {
 
     setSubmitting(true)
     
-    await fetch(`https://codsoft-fmke.onrender.com/api/jobs/job/${id}/apply`, {
+    await fetch(`http://localhost:8000/api/jobs/job/${id}/apply`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -81,7 +81,7 @@ const ApplyJob = () => {
       const formData = new FormData();
       formData.append("resume", file)
       console.log(file)
-      const res = await axios.post(`https://codsoft-fmke.onrender.com/upload/resume`, formData, {
+      const res = await axios.post(`http://localhost:8000/upload/resume`, formData, {
       headers: { "Content-Type": "multipart/form-data"},
 			});
 			console.log(res.data)
@@ -110,7 +110,7 @@ const ApplyJob = () => {
                   <Link 
                     className="text-gray-700 font-semibold px-2 bg-gray-50 rounded-md flex"
                     target="_blank"
-                    to={`https://codsoft-fmke.onrender.com/profileUploads/${resumeFile().resumeName}`}
+                    to={`http://localhost:8000/profileUploads/${resumeFile().resumeName}`}
                   >
                     <AiOutlineFilePdf  className="content-center text-xl"/>
                     {resumeFile().originalName}

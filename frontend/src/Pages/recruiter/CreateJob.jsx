@@ -52,7 +52,7 @@ const CreateJob = () => {
     setSubmitting(true)
     try {
       console.log(data)
-      const res = await fetch(`https://codsoft-fmke.onrender.com/api/jobs/create`, {
+      const res = await fetch(`http://localhost:8000/api/jobs/create`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

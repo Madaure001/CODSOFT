@@ -27,7 +27,7 @@ const Home = () => {
   }
   const getAlljobs = async () => {
     setIsLoading(true);
-    const res = await axios.get(`https://codsoft-fmke.onrender.com/api/jobs`)
+    const res = await axios.get(`http://localhost:8000/api/jobs`)
     
     setJobs(res.data);
    
