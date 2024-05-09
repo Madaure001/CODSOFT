@@ -1,6 +1,6 @@
-import React from 'react'
-import { SlHeart, SlShare } from 'react-icons/sl';
-import { Link } from 'react-router-dom';
+import React from "react"
+import { SlHeart, SlShare } from "react-icons/sl";
+import { Link } from "react-router-dom";
 import { MdOutlineLocalPrintshop } from "react-icons/md";
 
 const QuickLinks = ({job}) => {

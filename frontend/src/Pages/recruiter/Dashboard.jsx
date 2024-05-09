@@ -7,7 +7,7 @@ const Dashboard = () => {
     const [id, setId] = useState(EazyUser()._id);
     const token = Token()
     const [jobs, setJobs] = useState([]);
-    const [searchText, setSearchText] = useState('');
+    const [searchText, setSearchText] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const Dashboard = () => {
             method: "GET",
             headers: {
             Authorization: `Bearer ${token}`,
-            'Content-Type':'application/json'
+            "Content-Type":"application/json"
         },
         })
         .then((res) => res.json())
@@ -45,7 +45,7 @@ const Dashboard = () => {
 
     const handleDelete = async (job) => {
         //console.log(id)
-        //verify user's decision to delete
+        //verify user"s decision to delete
         const hasConfirmed = confirm("Are you sure you want to delete this job?");
 
         if(hasConfirmed) {
@@ -55,7 +55,7 @@ const Dashboard = () => {
                     method: "DELETE",
                     headers: {
                         Authorization: `Bearer ${token}`,
-                        'Content-Type':'application/json'
+                        "Content-Type":"application/json"
                     },
                 })
                 .then((res) => res.json())

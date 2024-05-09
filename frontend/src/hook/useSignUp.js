@@ -83,35 +83,35 @@ export function handleSignupErrors({
 	//console.log(username, password, confirmPassword, type, email, fullName, about, )
 
 	if (!username || !password || !confirmPassword || !type || !email || !fullName || !about ) {
-		toast.error('Please fill in all fields');
+		toast.error("Please fill in all fields");
 		return false;
 	};
 
 	if (password !== confirmPassword) {
-		toast.error('Passwords do not match');
+		toast.error("Passwords do not match");
 		return false;
 	};
 
 	if (password.length < 8) {
-		toast.error('Password must be at least 8 characters');
+		toast.error("Password must be at least 8 characters");
 		return false;
 	};
 
 	if (username.length < 6) {
-		toast.error('username must be at least 6 characters');
+		toast.error("username must be at least 6 characters");
 		return false;
 	};
 
 	if (!pattern.test(username)) {
-		toast.error('Username cannot have special characters');
+		toast.error("Username cannot have special characters");
 		return false;
 	};
 	if (!type) {
-		toast.error('Account type cannont be empty')
+		toast.error("Account type cannont be empty")
 		return false;
 	};
 	if (!profile) {
-		toast.error('Please upload your profile')
+		toast.error("Please upload your profile")
 		return false;
 	};
 

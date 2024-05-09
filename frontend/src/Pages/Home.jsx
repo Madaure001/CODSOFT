@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import NavBar from '../components/NavBar'
-import Banner from '../components/Banner';
-import { parse } from 'dotenv';
-import JobCard from '../components/JobCard';
-import Jobs from '../components/Jobs';
-import SideBar from '../sidebar/SideBar';
-import NewsLetter from '../components/NewsLetter';
-import axios from 'axios';
+import React, { useEffect, useState } from "react"
+import Banner from "../components/Banner";
+import JobCard from "../components/JobCard";
+import Jobs from "../components/Jobs";
+import SideBar from "../sidebar/SideBar";
+import NewsLetter from "../components/NewsLetter";
+import axios from "axios";
 
 const Home = () => {
   
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [jobs, setJobs] = useState([]);
     
@@ -120,16 +118,16 @@ const Home = () => {
   //total pages
   
   return (
-    <div className='shadow-lg '>
+    <div className="shadow-lg ">
       <Banner 
         query={query}
         handleInputChange={handleInputChange}
       />
       {/* main content */}
-      <div className='bg-gray-100 md:grid grid-cols-4 gap-8 lg:px-24 px-4 py-2 '>
+      <div className="bg-gray-100 md:grid grid-cols-4 gap-8 lg:px-24 px-4 py-2 ">
 
         {/*left side */}
-        <div className='bg-white p-4 mb-2 rounded-[10px]'>
+        <div className="bg-white p-4 mb-2 rounded-[10px]">
           <SideBar 
             handleChange={handleChange}
             handleClick={handleClick}
@@ -137,7 +135,7 @@ const Home = () => {
         </div>
 
         {/*center piece */}
-        <div className='col-span-2 bg-white p-4 mb-2 rounded-[10px]'>
+        <div className="col-span-2 bg-white p-4 mb-2 rounded-[10px]">
           {
             isLoading ? (<> </>) 
             :<>< Jobs result={result} resultsFound={resultsFound} /></>            
@@ -150,7 +148,7 @@ const Home = () => {
                   <button 
                     onClick={previousPage} 
                     disabled={currentPage === 1}
-                    className='hover:border-blue hover:border hover:rounded-md px-2 disabled:hover:border-none disabled:text-gray-300'
+                    className="hover:border-blue hover:border hover:rounded-md px-2 disabled:hover:border-none disabled:text-gray-300"
                   >
                     Previous
                   </button>
@@ -160,18 +158,18 @@ const Home = () => {
                   <button 
                     onClick={nextPage} 
                     disabled={currentPage === totalPages}
-                    className='hover:border-blue hover:border hover:rounded-md px-2 disabled:hover:border-none disabled:text-gray-300'
+                    className="hover:border-blue hover:border hover:rounded-md px-2 disabled:hover:border-none disabled:text-gray-300"
                   >
                     Next
                   </button>
               </div>
-            ) : ''
+            ) : ""
           }
           
         </div>
         
         {/*right side */}
-        <div className='bg-white p-4 rounded-[10px]'>
+        <div className="bg-white p-4 rounded-[10px]">
           <NewsLetter />
         </div>
         

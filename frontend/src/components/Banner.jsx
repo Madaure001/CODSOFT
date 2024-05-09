@@ -4,12 +4,12 @@ import { CiLocationOn } from "react-icons/ci";
 const Banner = ({query, handleInputChange}) => {
 
   return (
-    <div className='overflow-hidden max-w-screen-2xl container
-      mx-auto lg:px-24 md:pt-28 py-14 px-5 bg-gradient-to-t from-white  to-gray-100 '
+    <div className="overflow-hidden max-w-screen-2xl container
+      mx-auto lg:px-24 md:pt-28 py-14 px-5 bg-gradient-to-t from-white  to-gray-100 "
      >
-      <h1 className='text-3xl md:text-5xl font-bold w-full mb-3'>
-        Your <span className='text-blue'>New Job </span> 
-        Opportunities Awaits <span className='text-blue'>Today</span>
+      <h1 className="text-3xl md:text-5xl font-bold w-full mb-3">
+        Your <span className="text-blue">New Job </span> 
+        Opportunities Awaits <span className="text-blue">Today</span>
       </h1>
       <p className="text-base sm:text-lg text-black/70 mb-8">
         Thousand of jobs in Computer, Engineering and Technology sectors are waiting for you
@@ -22,12 +22,12 @@ const Banner = ({query, handleInputChange}) => {
           >
             <input 
               type="text" 
-              name='job-title' 
-              id='job-title'
+              name="job-title" 
+              id="job-title"
               onChange={handleInputChange}
               value={query}
-              className='input-blue '
-              placeholder='find your job title here'
+              className="input-blue "
+              placeholder="find your job title here"
             />
             <BsSearch className="absolute mt-2.5 ml-2 text-blue"/>
           </div>
@@ -36,12 +36,12 @@ const Banner = ({query, handleInputChange}) => {
           >
             <input 
               type="text" 
-              name='location' 
-              id='location'
+              name="location" 
+              id="location"
               
-              className='block flex-1 border-0 bg-transparent py-1.5 pl-8 text-gray-900 
-                placeholder:text-gray-400 focus:right-0 sm:text-sm sm:leading-6 focus:outline-none focus:border focus:border-blue focus:rounded-md'
-              placeholder='Location'
+              className="block flex-1 border-0 bg-transparent py-1.5 pl-8 text-gray-900 
+                placeholder:text-gray-400 focus:right-0 sm:text-sm sm:leading-6 focus:outline-none focus:border focus:border-blue focus:rounded-md"
+              placeholder="Location"
             />
             <CiLocationOn className="absolute mt-2.5 ml-2 text-blue"/>
           </div>

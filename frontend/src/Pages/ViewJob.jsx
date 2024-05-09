@@ -17,7 +17,7 @@ const JobInfo = () => {
              await fetch(`https://codsoft-fmke.onrender.com/api/jobs/job/${id}`,{
                 method: "GET",
                 headers: {
-                'Content-Type':'application/json'
+                "Content-Type":"application/json"
                 },
             })
             .then(res => res.json())

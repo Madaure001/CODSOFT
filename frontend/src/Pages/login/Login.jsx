@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaUser } from 'react-icons/fa6';
-import { RiLockPasswordFill } from 'react-icons/ri';
-import useLogin from '../../hook/useLogin';
-import { SetPopupContext } from '../../App'; 
-import isAuth, { EazyUser, userType } from '../../lib/isAuth';
+import { FaUser } from "react-icons/fa6";
+import { RiLockPasswordFill } from "react-icons/ri";
+import useLogin from "../../hook/useLogin";
+import { SetPopupContext } from "../../App"; 
+import isAuth, { EazyUser, userType } from "../../lib/isAuth";
 
 const initialState = {
-  email: '',
-  password: ''
+  email: "",
+  password: ""
 }
 const Login = () => {
   
@@ -36,16 +36,16 @@ const Login = () => {
     <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 sm:px-8 bg-gradient-to-b 
       from-gray-100 to-white py-16 flex flex-col justify-center items-center content-center "
     >
-      <div className=' bg-gray-200 shadow-md flex flex-col justify-center items-center 
+      <div className=" bg-gray-200 shadow-md flex flex-col justify-center items-center 
         content-center  px-4 rounded-lg backdrop-filter md:backdrop-blur-sm 
-        bg-opacity-50 '
+        bg-opacity-50 "
       >
-        <div className=' w-full sm:w-[375px] h-full md:h-[350px] gap-2 p-4 flex flex-col 
-          justify-center content-center ' 
+        <div className=" w-full sm:w-[375px] h-full md:h-[350px] gap-2 p-4 flex flex-col 
+          justify-center content-center " 
         >
-          <h2 className='font-semibold text-lg px-16'>Login To Account</h2>
+          <h2 className="font-semibold text-lg px-16">Login To Account</h2>
 
-          <form onSubmit={handleSubmit} className='p-1'>
+          <form onSubmit={handleSubmit} className="p-1">
             
             <label 
               className="input input-bordered flex items-center gap-2 mb-2"
@@ -72,21 +72,21 @@ const Login = () => {
                 name="password"
                 required
                 className="grow input-blue rounded-lg gap-2 shadows-sm" 
-                placeholder='Enter Password'
+                placeholder="Enter Password"
                 value={password}
                 onChange={(e) => setPassword( e.target.value )}
               />
             </label>
             
-            <div className='flex'>
+            <div className="flex">
               <p>
-                  <span className='gap-2 p-2'>
+                  <span className="gap-2 p-2">
                     Not Yet Registered?
                   
                     <Link
                       to={"/signup"}
-                      className='text-base text-blue hover:underline hover:text-blue/50 pl-2'
-                      href='#'
+                      className="text-base text-blue hover:underline hover:text-blue/50 pl-2"
+                      href="#"
                     >
                       SignUp
                     </Link>
@@ -95,7 +95,7 @@ const Login = () => {
             </div>
             <div>
               <button type="submit" 
-                className='rounded-lg text-white font-semibold mt-2 border bg-blue w-full'
+                className="rounded-lg text-white font-semibold mt-2 border bg-blue w-full"
                 disabled={submitting}
               >
                 {submitting ? "Loggin ..." : "Login"}

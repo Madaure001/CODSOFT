@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaBuildingColumns, FaLocationPin, FaPhone, FaUser } from "react-icons/fa6";
-import CreatableSelect from 'react-select/creatable';
+import CreatableSelect from "react-select/creatable";
 
 const options = [
     {value: "Javascript", label: "Javascript"},
@@ -19,16 +19,16 @@ const AccountType = ({  onCheckboxChange, inputs, setInputs,}) => {
     
 	return (
 		<div className="w-full">
-			<div className='form-control gap-4'>
+			<div className="form-control gap-4">
 				<label className={`label gap-2 cursor-pointer ${inputs.type === "recruiter" ? "selected" : ""}`}>
 					
 					<input 
-						type='checkbox' 
-						className='checkbox border-slate-900 peer' 
+						type="checkbox" 
+						className="checkbox border-slate-900 peer" 
 						checked={inputs.type === "recruiter"}
 						onChange={() => onCheckboxChange("recruiter")}
 					/>
-					<span className='label-text text-blue gap-2 px-2 font-semibold'>Recruiter</span>
+					<span className="label-text text-blue gap-2 px-2 font-semibold">Recruiter</span>
 					<div className=" hidden peer-checked:block peer-checked:form_grow">
 						{/* 1st row */}
                         <div className="create-job-flex">
@@ -52,7 +52,7 @@ const AccountType = ({  onCheckboxChange, inputs, setInputs,}) => {
                                         type="text" 
                                         id="locationInput"
                                         name="locationInput"
-                                        placeholder='Company location to be used as default location'
+                                        placeholder="Company location to be used as default location"
                                         value={inputs.location}                            
                                         onChange={(e)=>setInputs({...inputs, location: e.target.value})}
                                         className="create-job-input"              
@@ -112,11 +112,11 @@ const AccountType = ({  onCheckboxChange, inputs, setInputs,}) => {
 				</label>
 			
 				<label className={`label gap-2 cursor-pointer ${inputs.type === "applicant" ? "selected" : ""}`}>
-					<span className='label-text text-blue gap-2 px-2 font-semibold'>Applicant</span>
+					<span className="label-text text-blue gap-2 px-2 font-semibold">Applicant</span>
 					<input
 						 
-						type='checkbox' 
-						className='checkbox  border-slate-900  peer' 
+						type="checkbox" 
+						className="checkbox  border-slate-900  peer" 
 						checked={inputs.type === "applicant"}
 						onChange={() => onCheckboxChange("applicant")}
 					/>
@@ -170,7 +170,7 @@ const AccountType = ({  onCheckboxChange, inputs, setInputs,}) => {
                         {/* 3rd row */}
                         <div className="create-job-flex">
                             <div className="lg:w-1/2 w-full">
-                                <label id='equitySignup' 
+                                <label id="equitySignup" 
                                     className="input input-bordered create-acc-input md:pr-0"
                                 >
                                     Equity
@@ -189,7 +189,7 @@ const AccountType = ({  onCheckboxChange, inputs, setInputs,}) => {
                             <div className="lg:w-1/2 w-full">
                                 <label  
                                     className="input input-bordered create-acc-input"
-                                    id='nationality'
+                                    id="nationality"
                                 >
                                     Nationality
                                     <input type="text" placeholder="e.g Canada"

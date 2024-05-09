@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import isAuth, { displayPic, EazyUser, resumeFile, Token, userType } from '../lib/isAuth';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { AiOutlineFilePdf } from 'react-icons/ai';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import isAuth, { displayPic, EazyUser, resumeFile, Token, userType } from "../lib/isAuth";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { AiOutlineFilePdf } from "react-icons/ai";
+import axios from "axios";
 
 const ApplyJob = () => {
 
@@ -26,7 +26,7 @@ const ApplyJob = () => {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
-          'Content-Type':'application/json'
+          "Content-Type":"application/json"
         },
       })
       .then(res => res.json())
@@ -57,7 +57,7 @@ const ApplyJob = () => {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
-        'Content-Type':'application/json'
+        "Content-Type":"application/json"
       },
       body: JSON.stringify(inputs)
     }).then((res) => res.json())
@@ -221,7 +221,7 @@ const ApplyJob = () => {
                 <p>By submitting your personal data and application you hereby confirm:</p>
                 <ul  className="list-disc px-4 py-2 text-gray-600 text-sm">
                   <li>
-                    That you have read and understood our Privacy Policy. Please view T & Cs, <a className='text-blue cursor-pointer'>here</a> 
+                    That you have read and understood our Privacy Policy. Please view T & Cs, <a className="text-blue cursor-pointer">here</a> 
                   </li>
                   <li>
                     That you have no objection to us retaining your personal information in our database for future employment opportunities that might arise.
@@ -230,8 +230,8 @@ const ApplyJob = () => {
                     That the information you have provided to us is true, correct and up to date.
                   </li>
                 </ul>
-                <div className='flex gap-4'>
-                  <p className='text-sm'>I have read and accept the Terms and Conditions </p>
+                <div className="flex gap-4">
+                  <p className="text-sm">I have read and accept the Terms and Conditions </p>
                   <input type="checkbox" />
                 </div>
                 <div className="flex py-2 gap-4  ">
