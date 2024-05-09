@@ -71,8 +71,8 @@ const NavBar = () => {
                             >
                                 <img src={`https://codsoft-fmke.onrender.com/profileUploads/${displayPic()}`} 
                                     alt="" 
-                                    width={40}
-                                    height={30}
+                                    width={24}
+                                    height={24}
                                     className="rounded-full gap-2"
                                 />
                                 <p to="/" className="py-2 px-3 lg:px-5  rounded-md 
