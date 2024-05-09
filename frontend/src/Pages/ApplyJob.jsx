@@ -110,10 +110,10 @@ const ApplyJob = () => {
                   <Link 
                     className="text-gray-700 font-semibold px-2 bg-gray-50 rounded-md flex"
                     target="_blank"
-                    to={`https://codsoft-fmke.onrender.com/profileUploads/${resumeFile().resumeName}`}
+                    to={`https://codsoft-fmke.onrender.com/profileUploads/${resumeFile()?.resumeName}`}
                   >
                     <AiOutlineFilePdf  className="content-center text-xl"/>
-                    {resumeFile().originalName}
+                    {resumeFile()?.originalName}
                   </Link>
                   <input    
                     type="file"
