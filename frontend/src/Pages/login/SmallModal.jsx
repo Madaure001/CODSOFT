@@ -66,7 +66,7 @@ const SmallModalLogin = ({handleMenuToggler}) => {
                   <FaUser />
                   <input 
                     type="text" 
-                    id="username" 
+                    id="modalsmall" 
                     name="username" 
                     required  
                     className="grow input-blue rounded-lg gap-2 shadows-sm" 
@@ -81,7 +81,7 @@ const SmallModalLogin = ({handleMenuToggler}) => {
                   <RiLockPasswordFill />
                   <input 
                     type="password"
-                    id="current-password"
+                    id="modal-password"
                     name="password"
                     required
                     className="grow input-blue rounded-lg gap-2 shadows-sm" 
@@ -94,7 +94,7 @@ const SmallModalLogin = ({handleMenuToggler}) => {
                   <a href="/resetpassword" className=" text-blue hover:underline dark:text-blue">Lost Password?</a>
                   <div className="flex items-start">
                     <div className="flex items-center h-5">
-                      <input id="remember" type="checkbox" value="" className="w-4 h-4 border-2 border-blue rounded bg-gray-50 focus:ring-3 focus:ring-blue " />
+                      <input id="modal-remember" type="checkbox" value="" className="w-4 h-4 border-2 border-blue rounded bg-gray-50 focus:ring-3 focus:ring-blue " />
                     </div>
                     <label htmlFor="remember" className="ms-2 text-gray-400 dark:text-gray-300">Remember me</label>
                   </div>
