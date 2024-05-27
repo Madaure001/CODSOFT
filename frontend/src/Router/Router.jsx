@@ -1,7 +1,6 @@
 import { createBrowserRouter,  } from "react-router-dom";
 import App from "../App";
 import Home from "../Pages/Home";
-import Login from "../Pages/login/Login";
 import SignUp from "../Pages/signup/SignUp";
 import CreateJob from "../Pages/recruiter/CreateJob";
 import EditJob from "../Pages/recruiter/EditJob";
@@ -10,6 +9,7 @@ import JobInfo from "../Pages/ViewJob";
 import Dashboard from "../Pages/recruiter/Dashboard";
 import UserDashboard from "../Pages/UserDashboard";
 import Loader from "../Pages/Loader";
+import LoginPage from "../Pages/login/LoginPage";
 
 
 const router = createBrowserRouter([
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: '/', element:  <Home />},
-      { path: '/login', element:  <Login />}, 
+      { path: '/login', element:  <LoginPage />}, 
       { path: '/signup', element:  <SignUp />},
       { path: '/loader', element:  <Loader />},      
       { path: `/jobs/create`, element:  <CreateJob />},

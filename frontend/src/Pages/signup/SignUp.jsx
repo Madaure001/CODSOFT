@@ -7,6 +7,7 @@ import AccountType from "./AccountType";
 import useSignup from "../../hook/useSignUp";
 import isAuth, { EazyUser, userType } from "../../lib/isAuth";
 import axios from "axios";
+import Login from "../login/Login";
 
 
 const SignUp = () => {
@@ -52,10 +53,10 @@ const SignUp = () => {
       <div className=" bg-gray-200 shadow-md flex flex-col justify-center items-center 
         content-center px-4 rounded-lg backdrop-filter md:backdrop-blur-lg bg-opacity-50 "
       >
-      <div className="  h-full  gap-2 p-4">
+      <div className=" w-full h-full  gap-2 p-4 overflow-hidden">
         <h2 className="font-semibold text-lg">Create an Account</h2>
 
-        <form onSubmit={handleSubmit} className="p-1 text-base" >
+        <form onSubmit={handleSubmit} className="p-1 text-base md:text-xl" >
           <div className="flex flex-col-reverse p-2">
             <AccountType 
               onCheckboxChange={handleCheckboxChange} 
@@ -115,7 +116,7 @@ const SignUp = () => {
                 
                   <Link
                     to={"/login"}
-                    className="text-base text-blue hover:underline hover:text-blue/50 pl-2"
+                    className="text-base font-semibold text-blue hover:underline hover:text-blue/50 pl-2"
                     href="#"
                   >
                     Login

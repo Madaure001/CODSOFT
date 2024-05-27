@@ -36,7 +36,34 @@ const useLogin = () => {
 		}
 	};
 
-	return { submitting, login, loggedIn };
+	const modalLogin = async (password, username) => {
+		const success = handleLoginErrors(username, password);
+		if (!success) return;
+		setSubmitting(true);
+		try {
+			const res = await fetch("http://localhost:8000/auth/login", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ username, password }),
+			});
+
+			const data = await res.json();
+			//console.log(data)
+			if (data.error) {
+				throw new Error(data.error);
+			}
+
+			localStorage.setItem("EazilyHired-user", JSON.stringify(data));
+			
+			setLoggedin(isAuth());
+		} catch (error) {
+			toast.error(error.message);
+		} finally {
+			setSubmitting(false);
+		}
+	};
+
+	return { submitting, login, modalLogin, loggedIn };
 };
 export default useLogin;
 

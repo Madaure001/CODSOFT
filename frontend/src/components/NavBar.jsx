@@ -4,6 +4,8 @@ import { RxCross2 } from "react-icons/rx";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import isAuth, { displayPic, Token, userType } from "../lib/isAuth";
 import useLogout from "../hook/useLogout";
+import Login from "../Pages/login/Login";
+import SmallModalLogin from "../Pages/login/SmallModal";
 
 const recruiterItems = [
     
@@ -50,19 +52,18 @@ const NavBar = () => {
             </Link>
             {/* Nav items large devices */}
             <div className="justify-between  hidden md:flex lg:gap-12 md:gap-4">                
-                <ul className="hidden md:flex lg:gap-12 md:gap-4  content-center ">
-
+                <ul className="hidden md:flex lg:gap-12 md:gap-4  ">
                     
-                            {NavItems.map(heading => (
-                                <li key={heading.path} className="navItems ">
-                                    <NavLink 
-                                        to={heading.path}
-                                        className={({isActive}) => isActive ? "active" : ""}
-                                    >
-                                        {heading.title}
-                                    </NavLink>
-                                </li>
-                            ))}         
+                    {NavItems.map(heading => (
+                        <li key={heading.path} className="navItems content-center ">
+                            <NavLink 
+                                to={heading.path}
+                                className={({isActive}) => isActive ? "active" : ""}
+                            >
+                                {heading.title}
+                            </NavLink>
+                        </li>
+                    ))}         
                 </ul>                
                 {isAuth() ? (
                     <>
@@ -88,14 +89,11 @@ const NavBar = () => {
                     <>
                         {/* signup and login buttoons */}
                         <div className="text-base text-blue font-medium space-x-2 lg:space-x-5 
-                            hidden md:block "
+                            hidden md:flex "
                         >
-                            <Link to="/login" className="py-1 lg:py-2 px-2 lg:px-5 border  border-blue 
-                                rounded-md hover:bg-blue/50 hover:text-white">
-                                Log in
-                            </Link>
+                            <Login />
                             <Link to="/signup" className="py-1 lg:py-2 px-2 lg:px-5  rounded-md bg-blue 
-                                hover:bg-blue/50 text-white"
+                                hover:bg-blue/50 hover:text-blue text-white font-semibold"
                             >
                                 Sign up
                             </Link>
@@ -123,17 +121,19 @@ const NavBar = () => {
             </div>
         </nav>
         {/* small devices field*/}
-        <div className={` md:hidden z-index-10 shadow-lg px-2 w-1/4 
+        <div className={` md:hidden z-10 shadow-lg px-2 w-1/4 
             bg-gray-200 py-2 rounded-lg absolute right-0  flex flex-col gap-2 
             ${isMenuOpen ? "" : "hidden"} backdrop-filter backdrop-blur-lg bg-opacity-50`}
+            
         >    
             {/* Nav items small devices */}
             <ul className=" justify-items-end ">
                 {NavItems.map(heading => (
                     <li 
                         key={heading.path} 
-                        className=" right-0 text-sm text-gray-700  
-                            py-1 hover:text-blue/60">
+                        className=" right-0 text-sm text-gray-700 py-1 hover:text-blue/60"
+                        onClick={handleMenuToggler}
+                    >
                         <NavLink 
                             to={heading.path}
                             className={({isActive}) => isActive ? "active" : ""}
@@ -149,7 +149,7 @@ const NavBar = () => {
                             
                 {/* Login Button */}
                 <li className={`text-blue hover:text-primary py-1 ${isAuth() ? "hidden" : "block"}`}>
-                    <Link to="/login">LogIn</Link>
+                    <SmallModalLogin handleMenuToggler={handleMenuToggler}/>
                 </li>         
             </ul>
         </div>

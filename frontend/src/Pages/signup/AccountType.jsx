@@ -93,7 +93,7 @@ const AccountType = ({  onCheckboxChange, inputs, setInputs,}) => {
                         </div>
                         {/* 4th row */}
                         <div>
-                            <label id="aboutCompany" className="block mb-2 text-lg">Recruiter Profile
+                            <label id="aboutCompany" className="block mb-2 ">Recruiter Profile
                                 <textarea 
                                 name="aboutCompany" 
                                 id="aboutCompany" 
@@ -202,7 +202,7 @@ const AccountType = ({  onCheckboxChange, inputs, setInputs,}) => {
                         </div>
                         {/* 4th row */}
                         <div>
-                            <label id="aboutApplicant" className="block mb-2 text-lg">About Me
+                            <label id="aboutApplicant" className="block mb-2 ">About Me
                                 <textarea 
                                 name="aboutApplicant" 
                                 id="aboutApplicant" 

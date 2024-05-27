@@ -273,7 +273,7 @@ router.post("/job/:id/apply", jwtAuth, async (req, res) => {
             };
             //console.log(user, job)
 
-            transporter.sendMail(mailOptions, function(error, info){
+            transporter.sendMail(mailOptions, function(error, info, user, job){
             if (error) {
                 console.log(error);
             } else {
