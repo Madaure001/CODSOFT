@@ -38,7 +38,7 @@ const SmallModalLogin = ({handleMenuToggler}) => {
         LogIn
       </button>            
       {/* !-- small screen Modal main --*/}
-      <div id="sm-login-popup" tabindex="-1" 
+      <div id="sm-login-popup"  
         className={`bg-white/60 overflow-y-auto overflow-x-hidden fixed top-0 right-0 z-50 min-h-[100vh] h-[100vh]]  ${showMiniModal ? "flex-grow w-screen md:hidden" : "hidden"}`}
       >
         <div className="absolute right-0 w-full p-4 max-w-md h-full">

@@ -60,7 +60,7 @@ const Login = () => {
       </button>
       
       {/* !-- Modal main --*/}
-      <div id="login-popup" tabindex="-1" 
+      <div id="login-popup" 
         className={`bg-white/60 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center ${showModal ? "flex" : "hidden"}`}
       >
         <div className="relative p-4 w-full max-w-md h-full md:h-auto">
