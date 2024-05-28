@@ -1,12 +1,12 @@
 # MERN Stack Project: Responsive Job Portal App
 
-![Demo App](/Eazilyhired.PNG)
+![Demo App](/frontend/public/Eazilyhired.PNG)
 
 [See it Live here](https://eazilyhired.netlify.app/applicant/dashboard)
 
 Some Features:
 
-- 🌟 Tech stack: MERN + Socket.io + TailwindCSS + Daisy UI
+- 🌟 Tech stack: MERN + TailwindCSS + Daisy UI
 - 🎃 Authentication && Authorization with JWT
 - 👾 Password recovery using Nodemailer
 - 🚀 Upload resume and check applications
