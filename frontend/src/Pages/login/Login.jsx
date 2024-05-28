@@ -11,7 +11,7 @@ const initialState = {
   email: "",
   password: ""
 }
-const Login = () => {
+const Login = ({handleMenuToggler}) => {
   
   //const [popup, setPopup] = useContext(SetPopupContext);
   const navigate = useNavigate();
@@ -31,6 +31,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await modalLogin(password, username)
+    handleMenuToggler()
   };
 
   
@@ -113,7 +114,7 @@ const Login = () => {
                   />
                 </label>
                 <div className="flex text-base justify-between">
-                  <a href="/resetpassword" className=" text-blue hover:underline dark:text-blue">Forgot Password?</a>
+                  <a href="/reset" className=" text-blue hover:underline dark:text-blue">Forgot Password?</a>
                   <div className="flex items-start">
                     <div className="flex items-center h-5">
                       <input id="remember" type="checkbox" value="" className="w-4 h-4 border-2 border-blue rounded bg-gray-50 focus:ring-3 focus:ring-blue " />
@@ -125,7 +126,7 @@ const Login = () => {
                 
                 <div className="mb-2">
                   <button type="submit" 
-                    className="rounded-md text-white text-base font-semibold mt-2 border bg-blue w-full"
+                    className="rounded-md text-white text-base font-semibold mt-2 border bg-blue w-full py-1"
                     disabled={submitting}
                   >
                     {submitting ? "Loggin ..." : "Login"}

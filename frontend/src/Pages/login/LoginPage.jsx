@@ -45,7 +45,7 @@ const LoginPage = () => {
         >
           <h2 className="font-semibold text-lg px-8 md:px-16">Login To Account</h2>
 
-          <form onSubmit={handleSubmit} className="p-1">
+          <form onSubmit={handleSubmit} className="p-1 font-medium md:text-lg">
             
             <label 
               className="input input-bordered flex items-center gap-2 mb-2"
@@ -79,32 +79,32 @@ const LoginPage = () => {
             </label>
             
             <div className="flex text-sm md:text-base font-medium justify-between">
-                  <a href="/resetpassword" className=" text-blue hover:underline dark:text-blue">Forgot Password?</a>
+                  <a href="/reset" className=" text-blue hover:underline dark:text-blue">Forgot Password?</a>
                   <div className="flex items-start">
                     <div className="flex items-center h-5">
                       <input id="remember" type="checkbox" value="" className="w-4 h-4 border-2 border-blue rounded bg-gray-50 focus:ring-3 focus:ring-blue " />
                     </div>
-                    <label htmlFor="remember" className="ms-2   text-gray-400 dark:text-gray-300">Remember me</label>
+                    <label htmlFor="remember" className="ms-2   text-gray-500 dark:text-gray-300">Remember me</label>
                   </div>
                   
                 </div>
                 
                 <div className="mb-2">
                   <button type="submit" 
-                    className="rounded-md text-white text-base font-semibold mt-2 border bg-blue w-full"
+                    className="rounded-md text-white text-base font-semibold mt-2 border bg-blue w-full py-1"
                     disabled={submitting}
                   >
                     {submitting ? "Loggin ..." : "Login"}
                   </button>
                 </div>
-                <div className="flex text-sm md:text-base">
+                <div className="flex text-sm md:text-lg">
                   <p>
                       <span className="gap-2 my-3">
                         Not Yet Registered?
                       
                         <Link
                           to={"/signup"}
-                          className=" text-gray-400 font-semibold hover:underline hover:text-blue/50 pl-2"
+                          className=" text-gray-500 font-semibold hover:underline hover:text-blue/60 pl-2"
                           href="#"
                           onClick={() => setShowModal(false)}
                         >

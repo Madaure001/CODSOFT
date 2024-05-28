@@ -30,6 +30,7 @@ const SmallModalLogin = ({handleMenuToggler}) => {
 
     e.preventDefault();
     await modalLogin(password, username)
+    handleMenuToggler()
   };
 
   return (
@@ -91,7 +92,7 @@ const SmallModalLogin = ({handleMenuToggler}) => {
                   />
                 </label>
                 <div className="flex text-base font-medium justify-between">
-                  <a href="/resetpassword" className=" text-blue hover:underline dark:text-blue">Lost Password?</a>
+                  <a href="/reset" className=" text-blue hover:underline dark:text-blue">Lost Password?</a>
                   <div className="flex items-start">
                     <div className="flex items-center h-5">
                       <input id="modal-remember" type="checkbox" value="" className="w-4 h-4 border-2 border-blue rounded bg-gray-50 focus:ring-3 focus:ring-blue " />
@@ -103,7 +104,7 @@ const SmallModalLogin = ({handleMenuToggler}) => {
                 
                 <div className="mb-2">
                   <button type="submit" 
-                    className="rounded-md text-white text-base font-semibold mt-2 border bg-blue w-full"
+                    className="rounded-md text-white text-base font-semibold mt-2 border bg-blue w-full py-1"
                     disabled={submitting}
                   >
                     {submitting ? "Loggin ..." : "Login"}

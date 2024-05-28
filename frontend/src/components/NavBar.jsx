@@ -72,13 +72,13 @@ const NavBar = () => {
                             >
                                 <img src={`https://codsoft-fmke.onrender.com/profileUploads/${displayPic()}`} 
                                     alt="" 
-                                    width={24}
-                                    height={24}
+                                    width={48}
+                                    height={48}
                                     className="rounded-full gap-2"
                                 />
                                 <p to="/" className="py-2 px-3 lg:px-5  rounded-md 
                                     bg-blue hover:bg-blue/50 text-white cursor-pointer"
-                                    onClick={logout}
+                                    onClick={() => {logout(); handleMenuToggler()}  }
                                     disabled={submitting}
                                 >
                                     {submitting ? "Logging Out ..." : "Logout"}
@@ -91,7 +91,7 @@ const NavBar = () => {
                         <div className="text-base text-blue font-medium space-x-2 lg:space-x-5 
                             hidden md:flex "
                         >
-                            <Login />
+                            <Login handleMenuToggler={handleMenuToggler}/>
                             <Link to="/signup" className="py-1 lg:py-2 px-2 lg:px-5  rounded-md bg-blue 
                                 hover:bg-blue/50 hover:text-blue text-white font-semibold"
                             >
@@ -144,7 +144,7 @@ const NavBar = () => {
                 ))}
                 {/* Logout Button */}
                 <li className={`text-blue hover:text-primary py-1 ${isAuth() ? "block"  :"hidden" }`}>
-                    <Link to="#" onClick={logout}>LogOut</Link>
+                    <Link to="#" onClick={() => {logout(); handleMenuToggler()}  }>LogOut</Link>
                 </li>
                             
                 {/* Login Button */}

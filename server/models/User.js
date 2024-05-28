@@ -26,6 +26,8 @@ const userSchema = new mongoose.Schema(
         type: String,
         required: true,
       },
+      resetPasswordToken: String,
+      resetPasswordExpires: Date,
       type: {
         type: String,
         enum: ["recruiter", "applicant"],

@@ -116,7 +116,7 @@ const SignUp = () => {
                 
                   <Link
                     to={"/login"}
-                    className="text-base font-semibold text-blue hover:underline hover:text-blue/50 pl-2"
+                    className="text-lg font-semibold text-blue hover:underline hover:text-blue/50 pl-2"
                     href="#"
                   >
                     Login

@@ -10,6 +10,8 @@ import Dashboard from "../Pages/recruiter/Dashboard";
 import UserDashboard from "../Pages/UserDashboard";
 import Loader from "../Pages/Loader";
 import LoginPage from "../Pages/login/LoginPage";
+import PasswordReset from "../Pages/login/reset";
+import NewPassword from "../Pages/login/NewPassword";
 
 
 const router = createBrowserRouter([
@@ -19,6 +21,7 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element:  <Home />},
       { path: '/login', element:  <LoginPage />}, 
+      { path: "/reset", element: <PasswordReset />},
       { path: '/signup', element:  <SignUp />},
       { path: '/loader', element:  <Loader />},      
       { path: `/jobs/create`, element:  <CreateJob />},
@@ -27,7 +30,12 @@ const router = createBrowserRouter([
       { path: '/jobs/job/:id/apply', element:  <ApplyJob />},
       { path: `/recruiter/dashboard`,  element: <Dashboard />,},
       { path: "/applicant/dashboard", element: <UserDashboard />},
-    ]
+      { 
+        path: "/reset/:token", element: <NewPassword />,
+        loader: ({params}) => fetch(`https://codsoft-fmke.onrender.com/auth/reset/${params.token}`)
+      },
+    ],
+    
   },
 ]);
 export default router;
