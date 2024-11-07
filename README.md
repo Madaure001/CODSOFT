@@ -2,7 +2,7 @@
 
 ![Demo App](/frontend/public/Eazilyhired.PNG)
 
-[See it Live here](https://eazilyhired.netlify.app/applicant/dashboard)
+[See it Live here](https://eazilyhired.netlify.app/)
 
 Some Features:
 
